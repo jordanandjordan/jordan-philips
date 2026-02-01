@@ -1,0 +1,164 @@
+{
+	"Main" : {
+		"group_name" : {
+			"type" : "StructuredText",
+			"config" : {
+				"single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label" : "Group Name (IE or Medium",
+				"placeholder" : "Group Name (IE adidas or drawings)"
+			}
+		},
+		"category" : {
+			"type" : "Select",
+			"config" : {
+				"options" : [ "Art", "Work" ],
+				"label" : "Category"
+			}
+		},
+		"uid" : {
+			"type" : "UID",
+			"config" : {
+				"label" : "Page ID"
+			}
+		},
+		"body" : {
+			"type" : "Slices",
+			"fieldset" : "Slice zone",
+			"config" : {
+				"labels" : {
+					"video" : [ ],
+					"single_image" : [ ],
+					"multiple_images" : [ ],
+					"looping_video" : [ ]
+				},
+				"choices" : {
+					"video" : {
+						"type" : "Slice",
+						"fieldset" : "Video",
+						"description" : "Video",
+						"icon" : "videocam",
+						"display" : "grid",
+						"non-repeat" : {
+							"project_title" : {
+								"type" : "StructuredText",
+								"config" : {
+									"single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+									"label" : "Project Title"
+								}
+							},
+							"project_description" : {
+								"type" : "StructuredText",
+								"config" : {
+									"multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+									"label" : "Project Description"
+								}
+							},
+							"video_link" : {
+								"type" : "Link",
+								"config" : {
+									"label" : "Video Link"
+								}
+							}
+						},
+						"repeat" : { }
+					},
+					"single_image" : {
+						"type" : "Slice",
+						"fieldset" : "Single Image",
+						"description" : "Single Image",
+						"icon" : "photo_size_select_actual",
+						"display" : "list",
+						"non-repeat" : {
+							"project_title" : {
+								"type" : "StructuredText",
+								"config" : {
+									"single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+									"label" : "Project Title"
+								}
+							},
+							"project_description" : {
+								"type" : "StructuredText",
+								"config" : {
+									"multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+									"label" : "Project Description"
+								}
+							},
+							"image" : {
+								"type" : "Image",
+								"config" : {
+									"constraint" : { },
+									"thumbnails" : [ ],
+									"label" : "Image"
+								}
+							}
+						},
+						"repeat" : { }
+					},
+					"multiple_images" : {
+						"type" : "Slice",
+						"fieldset" : "Multiple Images",
+						"description" : "Multiple Images",
+						"icon" : "photo_library",
+						"display" : "list",
+						"non-repeat" : {
+							"project_title" : {
+								"type" : "StructuredText",
+								"config" : {
+									"single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+									"label" : "Project Title"
+								}
+							},
+							"project_description" : {
+								"type" : "StructuredText",
+								"config" : {
+									"multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+									"label" : "Project Description"
+								}
+							}
+						},
+						"repeat" : {
+							"images" : {
+								"type" : "Image",
+								"config" : {
+									"constraint" : { },
+									"thumbnails" : [ ],
+									"label" : "Images"
+								}
+							}
+						}
+					},
+					"looping_video" : {
+						"type" : "Slice",
+						"fieldset" : "Looping Video",
+						"description" : "Autoplaying Video without traditional play functionality",
+						"icon" : "videocam",
+						"display" : "list",
+						"non-repeat" : {
+							"project_title" : {
+								"type" : "StructuredText",
+								"config" : {
+									"single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+									"label" : "Project Title"
+								}
+							},
+							"project_description" : {
+								"type" : "StructuredText",
+								"config" : {
+									"multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+									"label" : "Project Description"
+								}
+							},
+							"video_link" : {
+								"type" : "Link",
+								"config" : {
+									"label" : "Video Link"
+								}
+							}
+						},
+						"repeat" : { }
+					}
+				}
+			}
+		}
+	}
+}

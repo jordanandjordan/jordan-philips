@@ -1,0 +1,47 @@
+{
+  "name": "reactjs-starter",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "beautiful-react-hooks": "^0.27.2",
+    "gsap": "^3.4.2",
+    "lodash-es": "^4.17.15",
+    "magic-grid": "^3.2.4",
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0.1",
+    "prismic-javascript": "^2.7.1",
+    "prismic-reactjs": "^1.1.2",
+    "qs": "^6.9.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-load-script": "0.0.6",
+    "react-player": "^2.6.0",
+    "react-responsive": "^8.1.0",
+    "react-router-dom": "^5.1.2",
+    "screenfull": "^5.0.2",
+    "styled-components": "^5.1.1",
+    "swiper": "^6.1.1",
+    "swr": "^0.3.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "react-scripts": "^3.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": ">=4.8.1",
+    "npm": ">=2.15.11"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
