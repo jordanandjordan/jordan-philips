@@ -344,7 +344,7 @@ function FrontPageMobile({ pageData }) {
           </div>
 
           <div className="clients border-top">{<RichText render={bio.data.select_clients} />}</div>
-          <div className="award ">{<RichText render={get(bio, 'data.awards')} />}</div>
+          <div className="award border-top">{<RichText render={get(bio, 'data.awards')} />}</div>
           <div className="credit">{<RichText render={get(bio, 'data.site_credit')} />}</div>
         </div>
       </StyledColumn>
