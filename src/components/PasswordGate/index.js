@@ -116,7 +116,7 @@ function PasswordGate({ onSuccess, textColor }) {
           aria-label="Unlock"
           title="Unlock"
         >
-          {loading ? '…' : '→'}
+          {loading ? '…' : ''}
         </button>
       </div>
 
