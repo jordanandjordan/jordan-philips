@@ -74,7 +74,7 @@ const StyledColumn = styled.div`
   }
 
   &.column-bio .bio {
-    margin-bottom: 2px;
+    margin-bottom: 8px;
   }
 
   .border-bottom {
