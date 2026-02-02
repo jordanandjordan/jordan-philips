@@ -40,7 +40,7 @@ const StyledColumn = styled.div`
 
   &.column-bio {
     font-family: 'Sneak Regular', 'Helvetica Neue', sans-serif;
-    height: 38px;
+    height: 40px;
 
     .client {
       padding-left: 0.5rem;
@@ -74,7 +74,7 @@ const StyledColumn = styled.div`
   }
 
   &.column-bio .bio {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
 
   .border-bottom {
