@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { setAuthCookie } from '../../utils/auth'
 
 const Form = styled.form`
-  margin-top: 16px;
+  margin-top: 0px;
 
   .passwordInline {
     display: inline-flex;

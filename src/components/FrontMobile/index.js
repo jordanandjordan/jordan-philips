@@ -279,7 +279,7 @@ function FrontPageMobile({ pageData }) {
           </p>
 
           <div className="column-inner-content">
-            <div className="bio">{<RichText render={bio.data.bio} />}</div>
+            <div className="border-top">{<RichText render={bio.data.bio} />}</div>
 
             <div className="clients border-top">
               {<RichText render={bio.data.select_clients} />}
