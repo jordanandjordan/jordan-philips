@@ -7,7 +7,6 @@
     "gsap": "^3.4.2",
     "lodash-es": "^4.17.15",
     "magic-grid": "^3.2.4",
-    "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "prismic-javascript": "^2.7.1",
     "prismic-reactjs": "^1.1.2",
@@ -27,7 +26,8 @@
   },
   "devDependencies": {
     "prettier": "^2.0.5",
-    "react-scripts": "^3.2.0"
+    "react-scripts": "^3.2.0",
+    "sass": "^1.77.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,8 +35,8 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": ">=4.8.1",
-    "npm": ">=2.15.11"
+    "node": "20.x",
+    "npm": ">=9"
   },
   "browserslist": [
     ">0.2%",
