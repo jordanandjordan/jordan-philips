@@ -49,8 +49,6 @@ const StyledColumn = styled.div`
       padding-left: 1rem;
     }
     .column-header:before {
-      content: '↓';
-      margin-right: 4px;
     }
   }
 
@@ -71,9 +69,7 @@ const StyledColumn = styled.div`
     color: ${(props) => props.color};
     cursor: pointer;
 
-    &:before {
-      content: '↓';
-      margin-right: 4px;
+    &:before {      
     }
   }
 
@@ -94,13 +90,12 @@ const StyledColumn = styled.div`
 
   &.initial {
     .column-header:before {
-      content: '↑';
     }
   }
 
   &.expanded {
     .column-header:before {
-      content: '↑';
+      
     }
   }
 `
@@ -280,7 +275,7 @@ function FrontPageMobile({ pageData }) {
         >
           <p className="column-header">
             <span className="first">Jordan</span>
-            <span className="last"> </span>
+            <span className="last"> Philips</span>
           </p>
 
           <div className="column-inner-content">
@@ -317,11 +312,11 @@ function FrontPageMobile({ pageData }) {
         <span className="column-placeholder" onClick={() => handleClickTitle('bio')} />
         <p onClick={() => handleClickTitle('bio')} className="column-header">
           <span className="first">Jordan</span>
-          <span className="last"> </span>
+          <span className="last"> Philips</span>
         </p>
 
         <div className="column-inner-content">
-          <div className="bio">{<RichText render={bio.data.bio} />}</div>
+          <div className="bio border-top">{<RichText render={bio.data.bio} />}</div>
 
           <div className="clients border-top">
             <div className="client-work">
