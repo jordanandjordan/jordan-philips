@@ -325,7 +325,7 @@ function FrontPageMobile({ pageData }) {
 
           <div className="clients border-top">
             <div className="client-work">
-              <p>Campaign</p>
+              <p>Brand</p>
               <ClientList
                 clients={works}
                 handleProjectClick={handleProjectClick}
@@ -355,7 +355,7 @@ function FrontPageMobile({ pageData }) {
         color={siteSettings.work_text_color}
       >
         <p onClick={() => handleClickTitle('work')} className="column-header">
-          Campaign
+          Brand
         </p>
         <div className="column-inner-content">
           <Grid clients={works} playerTheme={'red'} />
