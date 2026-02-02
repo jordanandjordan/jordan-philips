@@ -350,7 +350,7 @@ function FrontPageMobile({ pageData }) {
         color={siteSettings.work_text_color}
       >
         <p onClick={() => handleClickTitle('work')} className="column-header">
-          Brand
+          Brand ↗
         </p>
         <div className="column-inner-content">
           <Grid clients={works} playerTheme={'red'} />
@@ -363,7 +363,7 @@ function FrontPageMobile({ pageData }) {
         color={siteSettings.art_text_color}
       >
         <p onClick={() => handleClickTitle('art')} className="column-header">
-          Digital
+          Digital ↗
         </p>
         <div className="column-inner-content">
           <Grid clients={arts} playerTheme={'blue'} />
