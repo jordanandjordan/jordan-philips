@@ -137,11 +137,17 @@ function FrontPageMobile({ pageData }) {
     setVh()
 
     window.addEventListener('resize', setVh)
-    window.visualViewport?.addEventListener('resize', setVh)
+
+    const vv = window.visualViewport
+    if (vv) {
+      vv.addEventListener('resize', setVh)
+    }
 
     return () => {
       window.removeEventListener('resize', setVh)
-      window.visualViewport?.removeEventListener('resize', setVh)
+      if (vv) {
+        vv.removeEventListener('resize', setVh)
+      }
     }
   }, [])
 
