@@ -77,3 +77,17 @@ iframe {
 ::-webkit-scrollbar-thumb {
 		background: #FF0000;
 }
+
+/* global.css (or PasswordGate styled-component) */
+input[type="password"],
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  font-size: 16px; /* prevents iOS Safari focus-zoom */
+}
+
+.password-gate input {
+  font-size: 16px;
+  line-height: 1.2;
+}
