@@ -27,6 +27,9 @@ const Form = styled.form`
     font: inherit;
     line-height: inherit;
     transform: translateY(-0.02em);
+
+    /* ✅ Prevent iOS Safari "focus zoom" (requires 16px+) */
+    font-size: 16px;
   }
 
   .passwordArrow {
@@ -79,6 +82,11 @@ function PasswordGate({ onSuccess, textColor }) {
       return
     }
 
+    // ✅ blur active element so Safari doesn't hold zoom/focus state
+    if (document.activeElement && typeof document.activeElement.blur === 'function') {
+      document.activeElement.blur()
+    }
+
     setAuthCookie(30)
     setLoading(false)
 
@@ -105,6 +113,7 @@ function PasswordGate({ onSuccess, textColor }) {
           }}
           autoComplete="current-password"
           maxLength={24}
+          inputMode="text"
           // collapse when empty; expand with dots as the user types
           style={{ width: `${Math.max(1, Math.min(password.length, 32))}ch` }}
         />
