@@ -34,7 +34,10 @@ const StyledColumn = styled.div`
   padding: 0 8px;
   display: block;
   width: 100vw;
-  height: calc(calc(100vh - 38px) / 2);
+
+  /* ✅ iOS-safe viewport height */
+  height: calc((var(--vh, 1vh) * 100 - 38px) / 2);
+
   overflow: auto;
   position: relative;
 
@@ -69,7 +72,7 @@ const StyledColumn = styled.div`
     color: ${(props) => props.color};
     cursor: pointer;
 
-    &:before {      
+    &:before {
     }
   }
 
@@ -95,7 +98,6 @@ const StyledColumn = styled.div`
 
   &.expanded {
     .column-header:before {
-      
     }
   }
 `
@@ -119,6 +121,28 @@ function FrontPageMobile({ pageData }) {
 
   useEffect(() => {
     openLinksNewTab()
+  }, [])
+
+  /**
+   * ✅ iOS Safari viewport fix:
+   * sets CSS var --vh to window.innerHeight * 0.01
+   * so we can use height: calc(var(--vh) * 100) instead of 100vh
+   */
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
+
+    setVh()
+
+    window.addEventListener('resize', setVh)
+    window.visualViewport?.addEventListener('resize', setVh)
+
+    return () => {
+      window.removeEventListener('resize', setVh)
+      window.visualViewport?.removeEventListener('resize', setVh)
+    }
   }, [])
 
   const handleClickTitle = (columnType) => {
@@ -150,9 +174,15 @@ function FrontPageMobile({ pageData }) {
       if (!hasClass(columnArt, 'expanded')) {
         addClass(columnArt, 'expanded')
         removeClass(columnWork, 'expanded')
-        gsap.to([columnBio, columnWork], 0.4, { height: MIN_HEIGHT })
+        gsap.to([columnBio, columnWork], 0.4, {
+          height: MIN_HEIGHT,
+          onComplete: () => removeClass(columnBio, 'expanded'),
+        })
         gsap.to(columnArt, 0.4, { height: windowHeight - 2 * MIN_HEIGHT })
-      } else if (!hasClass(columnWork, 'expanded') && !hasClass(columnBio, 'expanded')) {
+      } else if (
+        !hasClass(columnWork, 'expanded') &&
+        !hasClass(columnBio, 'expanded')
+      ) {
         removeClass(columnArt, 'expanded')
         gsap.to([columnBio, columnWork, columnArt], 0.4, { height: MIN_HEIGHT })
       } else if (hasClass(columnArt, 'expanded')) {
@@ -271,7 +301,8 @@ function FrontPageMobile({ pageData }) {
           className="column column-bio expanded"
           background={siteSettings.about_background_color}
           color={siteSettings.about_text_color}
-          style={{ height: '100vh' }}
+          /* ✅ iOS-safe full height */
+          style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
         >
           <p className="column-header">
             <span className="first">Jordan</span>
@@ -281,9 +312,7 @@ function FrontPageMobile({ pageData }) {
           <div className="column-inner-content">
             <div className="border-top">{<RichText render={bio.data.bio} />}</div>
 
-            <div className="clients border-top">
-              {<RichText render={bio.data.select_clients} />}
-            </div>
+            <div className="clients border-top">{<RichText render={bio.data.select_clients} />}</div>
 
             <PasswordGate
               textColor={siteSettings.about_text_color}
